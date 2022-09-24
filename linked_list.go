@@ -2,16 +2,16 @@ package main
 
 import "errors"
 
-type Node[T comparable] struct {
+type lnode[T comparable] struct {
 	value      T
-	prev, next *Node[T]
+	prev, next *lnode[T]
 }
 
 var insertionError = errors.New("can't insert at specified index")
 
 type LinkedList[T comparable] struct {
 	length     int
-	head, tail *Node[T]
+	head, tail *lnode[T]
 }
 
 func NewLinkedList[T comparable]() *LinkedList[T] {
@@ -41,7 +41,7 @@ func (l *LinkedList[T]) InsertAt(item T, idx int) error {
 		curr = curr.next
 	}
 
-	node := &Node[T]{value: item}
+	node := &lnode[T]{value: item}
 	node.next = curr
 	prev := curr.prev
 	node.prev = prev
@@ -136,7 +136,7 @@ func (l *LinkedList[T]) RemoveAt(idx int) T {
 func (l *LinkedList[T]) Append(item T) {
 	l.length++
 
-	node := &Node[T]{value: item}
+	node := &lnode[T]{value: item}
 
 	if l.tail == nil {
 		l.head = node
@@ -150,7 +150,7 @@ func (l *LinkedList[T]) Append(item T) {
 }
 
 func (l *LinkedList[T]) Prepend(item T) {
-	node := &Node[T]{value: item}
+	node := &lnode[T]{value: item}
 
 	l.length++
 	if l.head == nil {

@@ -70,4 +70,9 @@ func TestLinkedList(t *testing.T) {
 	if v := list.Length(); v != 4 {
 		t.Errorf("got %v, want 4", v)
 	}
+
+	list.InsertAt(72, 4)
+	if v := list.Get(4); v != 72 {
+		t.Errorf("got %v, want 72", v)
+	}
 }
