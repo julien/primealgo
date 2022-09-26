@@ -25,11 +25,11 @@ func maze_solver(maze []string, wall string, start, end point) []*point {
 	}
 
 	path := make([]*point, 0)
-	_, path = walk(maze, wall, start, end, seen, path)
+	_, path = walkMaze(maze, wall, start, end, seen, path)
 	return path
 }
 
-func walk(maze []string, wall string, curr, end point, seen [][]bool, path []*point) (bool, []*point) {
+func walkMaze(maze []string, wall string, curr, end point, seen [][]bool, path []*point) (bool, []*point) {
 	if curr.x < 0 || curr.x >= len(maze[0]) || curr.y < 0 || curr.y >= len(maze) {
 		return false, path
 	}
@@ -51,7 +51,7 @@ func walk(maze []string, wall string, curr, end point, seen [][]bool, path []*po
 	for i := 0; i < len(dir); i++ {
 		next := dir[i]
 		np := point{x: curr.x + next[0], y: curr.y + next[1]}
-		if r, p := walk(maze, wall, np, end, seen, path); r {
+		if r, p := walkMaze(maze, wall, np, end, seen, path); r {
 			return true, p
 		}
 	}
