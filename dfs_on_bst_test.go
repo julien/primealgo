@@ -37,4 +37,10 @@ func TestDFSOnBST(t *testing.T) {
 	if v := dfsOnBst(&tree, 45); !v {
 		t.Errorf("got %v, want true", v)
 	}
+	if v := dfsOnBst(&tree, 7); !v {
+		t.Errorf("got %v, want true", v)
+	}
+	if v := dfsOnBst(&tree, 69); v {
+		t.Errorf("got %v, want false", v)
+	}
 }
