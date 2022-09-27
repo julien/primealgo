@@ -35,3 +35,14 @@ func TestBinarySearch(t *testing.T) {
 	}
 }
 
+func benchmarkBinarySearch(i int, b *testing.B) {
+	haystack := []int{1, 2, 42, 3, 4, 5}
+	for n := 0; n < b.N; n++ {
+		binarySearch(haystack, i)
+	}
+}
+
+func BenchmarkBinarySearch10(b *testing.B)    { benchmarkBinarySearch(10, b) }
+func BenchmarkBinarySearch100(b *testing.B)   { benchmarkBinarySearch(100, b) }
+func BenchmarkBinarySearch1000(b *testing.B)  { benchmarkBinarySearch(1000, b) }
+func BenchmarkBinarySearch10000(b *testing.B) { benchmarkBinarySearch(10000, b) }

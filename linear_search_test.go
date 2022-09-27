@@ -33,5 +33,16 @@ func TestLinearSearch(t *testing.T) {
 			}
 		})
 	}
-
 }
+
+func benchmarkLinearSearch(i int, b *testing.B) {
+	haystack := []int{1, 2, 42, 3, 4, 5}
+	for n := 0; n < b.N; n++ {
+		linearSearch(haystack, i)
+	}
+}
+
+func BenchmarkLinearSearch10(b *testing.B)    { benchmarkLinearSearch(10, b) }
+func BenchmarkLinearSearch100(b *testing.B)   { benchmarkLinearSearch(100, b) }
+func BenchmarkLinearSearch1000(b *testing.B)  { benchmarkLinearSearch(1000, b) }
+func BenchmarkLinearSearch10000(b *testing.B) { benchmarkLinearSearch(10000, b) }
