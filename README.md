@@ -1,4 +1,4 @@
-These are the exercises for @ThePrimeagen's algorithm
+These are the exercises for [@ThePrimeagen](https://github.com/ThePrimeagen)'s algorithm
 [course](https://frontendmasters.com/courses/algorithms) on FrontendMasters,
 but instead of using TypeScript it uses Go.
 
