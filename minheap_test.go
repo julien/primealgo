@@ -3,6 +3,8 @@ package main
 import "testing"
 
 func TestMinHeap(t *testing.T) {
+	t.Parallel()
+
 	heap := NewMinHeap[int]()
 
 	if v := heap.Length(); v != 0 {

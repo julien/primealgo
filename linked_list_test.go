@@ -3,6 +3,8 @@ package main
 import "testing"
 
 func TestLinkedList(t *testing.T) {
+	t.Parallel()
+
 	list := NewLinkedList[int]()
 	list.Append(5)
 	list.Append(7)

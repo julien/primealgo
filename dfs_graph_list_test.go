@@ -3,6 +3,8 @@ package main
 import "testing"
 
 func TestDFSGraphList(t *testing.T) {
+	t.Parallel()
+
 	list := make([][]graphEdge, 7)
 	for i := range list {
 		list[i] = make([]graphEdge, 0)

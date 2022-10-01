@@ -3,6 +3,8 @@ package main
 import "testing"
 
 func TestBFSGraphMatrix(t *testing.T) {
+	t.Parallel()
+
 	matrix := [][]int{
 		{0, 3, 1, 0, 0, 0, 0}, // 0
 		{0, 0, 0, 0, 1, 0, 0},

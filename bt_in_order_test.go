@@ -3,6 +3,8 @@ package main
 import "testing"
 
 func TestBinaryTreeInOrder(t *testing.T) {
+	t.Parallel()
+
 	tree := binaryNode[int]{
 		value: 20,
 		right: &binaryNode[int]{
