@@ -12,7 +12,7 @@ I might work on that later.
 The test are based on the [code](https://github.com/ThePrimeagen/kata-machine)
 used during the course.
 
-Some examples uses generics, which means you need Go >= 1.18.
+Some examples use generics, which means you need Go >= 1.18.
 
 To run the tests (assuming you have Go installed correctly), use:
 
